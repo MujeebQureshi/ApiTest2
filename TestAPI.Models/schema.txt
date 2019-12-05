@@ -1,3 +1,15 @@
+
+CREATE TABLE [dbo].[Users](
+	[LoginID] [varchar](30) NULL,
+	[Active] [varchar](1) NULL,
+	[Password] [varchar](30) NULL,
+	[RoleID] [varchar](50) NULL,
+	[LoginExpireDttm] [datetime] NULL,
+	[LastDTTM] [datetime] NULL,
+	[LastUserID] [varchar](30) NULL
+) ON [PRIMARY]
+
+
 CREATE TABLE [dbo].[lawyer](	
 	[SNo] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
 	[ RegNo]  [varchar](30) NULL,
