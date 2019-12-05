@@ -1,4 +1,4 @@
-
+'for testing
 CREATE TABLE [dbo].[Users](
 	[LoginID] [varchar](30) NULL,
 	[Active] [varchar](1) NULL,
