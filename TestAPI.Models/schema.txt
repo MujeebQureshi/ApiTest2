@@ -1,4 +1,4 @@
-.CREATE TABLE [dbo].[lawyer](	
+CREATE TABLE [dbo].[lawyer](	
 	[SNo] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
 	[ RegNo]  [varchar](30) NULL,
 	[Name]  [varchar](15) NULL,
