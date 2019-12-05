@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿//using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 using Newtonsoft.Json;
 using SqlKata.Compilers;
 using SqlKata.Execution;
@@ -19,10 +20,10 @@ namespace TestAPI.Models
             //var test = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(Convert.ToString(request.RequestData));
 
             // Setup the connection and compiler
-            var conn = "Database =PropertyInvestment; Data Source = localhost; User Id = root; Password = gsmgms12";
-            // var connection = new MySqlConnection(ConfigurationManager.AppSettings["MySqlDBConn"].ToString());
-            var connection = new MySqlConnection(conn);
-            var compiler = new MySqlCompiler(); 
+            //var conn = "Database =PropertyInvestment; Data Source = localhost; User Id = root; Password = gsmgms12";
+            var connection = new SqlConnection(ConfigurationManager.AppSettings["MySqlDBConn"].ToString());
+            //var connection = new MySqlConnection(conn);
+            var compiler = new SqlServerCompiler(); 
             var db = new QueryFactory(connection, compiler);
 
             SuccessResponse successResponseModel = new SuccessResponse();
@@ -30,7 +31,7 @@ namespace TestAPI.Models
             try
             {
                 // You can register the QueryFactory in the IoC container
-                var response = db.Query("User").Get();  //db.Query("jpexperience").Where("ExpId", 6).Where("ProfileId", 4).First();
+                var response = db.Query("Users").Get();  //db.Query("jpexperience").Where("ExpId", 6).Where("ProfileId", 4).First();
                 bool hasData = (response != null) ? true : false;
                 successResponseModel = new SuccessResponse(response, hasData);
             }
@@ -49,7 +50,7 @@ namespace TestAPI.Models
             //var test = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(Convert.ToString(request.RequestData));
 
             // Setup the connection and compiler
-            var connection = new MySqlConnection(ConfigurationManager.AppSettings["MySqlDBConn"].ToString());
+            var connection = new SqlConnection(ConfigurationManager.AppSettings["MySqlDBConn"].ToString());
             var compiler = new MySqlCompiler();
             var db = new QueryFactory(connection, compiler);
 
@@ -90,7 +91,7 @@ namespace TestAPI.Models
             // var connection = new MySqlConnection(ConfigurationManager.AppSettings["MySqlDBConn"].ToString());
             var conn = "Database =PropertyInvestment; Data Source = localhost; User Id = root; Password = gsmgms12";
             // var connection = new MySqlConnection(ConfigurationManager.AppSettings["MySqlDBConn"].ToString());
-            var connection = new MySqlConnection(conn);
+            var connection = new SqlConnection(conn);
 
             var compiler = new MySqlCompiler();
             var db = new QueryFactory(connection, compiler);

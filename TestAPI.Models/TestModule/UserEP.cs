@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿//using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 using Newtonsoft.Json;
 using SqlKata.Compilers;
 using SqlKata.Execution;
@@ -19,7 +20,7 @@ namespace TestAPI.Models
         public static object ValidateUser(string username, string password, string type)
         {
             // Setup the connection and compiler
-            var connection = new MySqlConnection(ConfigurationManager.AppSettings["MySqlDBConn"].ToString());
+            var connection = new SqlConnection(ConfigurationManager.AppSettings["MySqlDBConn"].ToString());
             var compiler = new MySqlCompiler();
             var db = new QueryFactory(connection, compiler);
             
