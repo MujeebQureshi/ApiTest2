@@ -112,6 +112,7 @@ CREATE TABLE [dbo].[Cases](
 	[LawyerID]  [varchar](30) NULL,
 	[ClientNIC]  [varchar](20) NULL,
 	[CaseType]  [varchar](30) NULL,
+	[Priority]  [varchar](15) NULL,
 	[OnBehalf]  [varchar](50) NULL,
 	[CourtNo]  [varchar](30) NULL,
 	[JusticeID]  [varchar](30) NULL,
