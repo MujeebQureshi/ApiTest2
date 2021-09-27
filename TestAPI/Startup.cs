@@ -12,6 +12,7 @@ namespace TestAPI
 {
     public class Startup
     {
+        //new comment
         public void Configuration(IAppBuilder app)
         {
             // Enable CORS (cross origin resource sharing) for making request using browser from different domains
